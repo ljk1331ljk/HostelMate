@@ -113,11 +113,11 @@ public class AnnouncementFragment extends Fragment {
                     if(postSnapshot.child("block").getValue() == null) {
                         announcementList.add(postSnapshot.getValue(Announcement.class));
                     }
-                    else if (postSnapshot.child("block").child(userBlock).getValue() != null) {
+                    else if (postSnapshot.child("block").child(userBlock).getValue().equals(true)) {
                         if (postSnapshot.child("level").getValue() == null) {
                             announcementList.add(postSnapshot.getValue(Announcement.class));
                         }
-                        else if (postSnapshot.child("level").child(userLevel).getValue() != null) {
+                        else if (postSnapshot.child("level").child(userLevel).getValue().equals(true)) {
                             announcementList.add(postSnapshot.getValue(Announcement.class));
                         }
                     }
