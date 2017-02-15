@@ -28,6 +28,7 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
@@ -44,8 +45,8 @@ public class AnnouncementFragment extends Fragment {
     ValueEventListener mValueListener;
     FirebaseUser u = FirebaseAuth.getInstance().getCurrentUser();
     DatabaseReference mUserDatabase;
-    String userBlock;
-    String userLevel;
+    String userBlock = "";
+    String userLevel = "";
 
     private OnFragmentInteractionListener mListener;
 
@@ -101,7 +102,6 @@ public class AnnouncementFragment extends Fragment {
     private void getAnnouncementList(){
         mDatabase = FirebaseDatabase.getInstance().getReference().child("announcements");
 
-
         Log.d(TAG,"going to get announcement");
         mValueListener = mDatabase.addValueEventListener(new ValueEventListener() {
             @Override
@@ -122,6 +122,7 @@ public class AnnouncementFragment extends Fragment {
                         }
                     }
                 }
+                Collections.reverse(announcementList);
                 mAnnouncementAdapter.notifyDataSetChanged();
             }
             @Override
