@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/announcement_card"
+    android:layout_marginTop="8dp"
+    android:background="@android:color/white"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp">
+
+    <TextView
+        android:text="Subject"
+        android:textSize="18sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/announcement_subject"/>
+    <LinearLayout
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/announcement_expandedview"
+        android:paddingTop="16dp"
+        android:visibility="gone">
+
+        <TextView
+            android:text="Announcement message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/announcement_message" />
+
+        <TextView
+            android:text="-JK"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="textEnd"
+            android:id="@+id/announcement_author" />
+    </LinearLayout>
+
+    <TextView
+        android:text="01/01/01 1.30pm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="textStart"
+        android:id="@+id/announcement_timestamp"
+        android:paddingBottom="8dp"
+        android:paddingTop="16dp"
+        android:textSize="16sp"
+        android:textColor="@color/Darkgrey"/>
+
+
+
+</LinearLayout>
